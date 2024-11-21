@@ -1,0 +1,30 @@
+<%- include('../layouts/layout', { body: `
+    <h2>Animal List</h2>
+    <a href="/add">Add New Animal</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Species</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- animals.forEach(animal => { %>
+          <tr>
+            <td><%- = animal.name %></td>
+            <td><%- = animal.species %></td>
+            <td><%- = animal.age %></td>
+            <td>
+              <a href="/edit/<%- = animal.id %>">Edit</a>
+              <form action="/delete/<%- = animal.id %>" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <%- }) %>
+      </tbody>
+    </table>
+  ` }) %>
+  

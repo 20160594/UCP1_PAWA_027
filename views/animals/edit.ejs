@@ -1,0 +1,14 @@
+<%- include('../layouts/layout', { body: `
+    <h2>Edit Animal</h2>
+    <form action="/edit/<%= animal.id %>" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%= animal.name %>" required>
+      <label for="species">Species:</label>
+      <input type="text" id="species" name="species" value="<%= animal.species %>" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" value="<%= animal.age %>" required>
+      <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+  ` }) %>
+  
